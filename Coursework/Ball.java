@@ -14,6 +14,8 @@ public class Ball extends Actor
     float friction = 0;
     boolean startButton = false;
     int time;
+    double xVelocity;
+    double yVelocity;
     /**
      * Act - do whatever the Ball wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -31,10 +33,18 @@ public class Ball extends Actor
     public double acceleration(){
         double acceleration;
         acceleration = mass*9.8*Math.sin(rampAngle) - friction;
-        return acceleration;
+        return acceleration; // Need to divide by mass
     }
     public double velocity(){
         velocity = velocity + acceleration() * (time/60);
         return velocity;
+    }
+    public double xVelocity(){
+        xVelocity = velocity()*Math.cos(rampAngle);
+        return xVelocity;
+    }
+    public double yVelocity(){
+        yVelocity = velocity()*Math.sin(rampAngle);
+        return yVelocity;
     }
 }
