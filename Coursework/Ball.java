@@ -27,7 +27,6 @@ public class Ball extends Actor
             time++;
             velocity();
             
-        
         }
     }
     public double acceleration(){
@@ -46,5 +45,13 @@ public class Ball extends Actor
     public double yVelocity(){
         yVelocity = velocity()*Math.sin(rampAngle);
         return yVelocity;
+    }
+    public void position(){
+        if(Ball.isTouching(Floor.class)){
+            setLocation(getX() + (int)xVelocity(),getY()); 
+        }
+        else{
+            setLocation(getX() + (int)xVelocity(),getY() + (int)yVelocity);
+        }
     }
 }
