@@ -13,7 +13,7 @@ public class Ball extends Actor
     int rampAngle = 45;
     float friction = 0;
     boolean startButton = false;
-    int time;
+    int time = 0;
     double xVelocity;
     double yVelocity;
     /**
@@ -26,7 +26,10 @@ public class Ball extends Actor
         if (startButton == true){
             time++;
             velocity();
-            
+            position();
+            if(isTouching(Wall.class)){
+                wall();
+            }
         }
     }
     public double acceleration(){
@@ -47,11 +50,22 @@ public class Ball extends Actor
         return yVelocity;
     }
     public void position(){
-        if(Ball.isTouching(Floor.class)){
+        if(isTouching(Floor.class)){
             setLocation(getX() + (int)xVelocity(),getY()); 
         }
         else{
             setLocation(getX() + (int)xVelocity(),getY() + (int)yVelocity);
         }
+    }
+    public void wall(){
+        velocity = 0;
+        mass = 0;
+        rampAngle = 45;
+        friction = 0;
+        startButton = false;
+        time = 0;
+    }
+    public Ball(){
+        getImage().scale(40,40);
     }
 }
