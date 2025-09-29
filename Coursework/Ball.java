@@ -8,11 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Ball extends Actor
 {
-    double velocity =0;
-    int mass =0;
-    int rampAngle = 45;
-    float friction = 0;
-    boolean startButton = false;
+    double velocity =2;
+    int mass =11;
+    int rampAngle = 40;
+    float friction = 90;
+    boolean startButton = true;
     int time = 0;
     double xVelocity;
     double yVelocity;
@@ -34,11 +34,12 @@ public class Ball extends Actor
     }
     public double acceleration(){
         double acceleration;
-        acceleration = mass*9.8*Math.sin(rampAngle) - friction;
-        return acceleration; // Need to divide by mass
+        double force = mass*9.8*Math.sin(rampAngle) - friction;
+        acceleration = force / mass;
+        return acceleration;
     }
     public double velocity(){
-        velocity = velocity + acceleration() * (time/60);
+        velocity = velocity + acceleration();
         return velocity;
     }
     public double xVelocity(){
