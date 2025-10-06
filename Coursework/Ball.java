@@ -68,5 +68,13 @@ public class Ball extends Actor
     }
     public Ball(){
         getImage().scale(40,40);
+        // double velocity =2;
+        //int mass =11;
+        //int rampAngle = 40;
+        //float friction = 90;
+        //boolean startButton = true;
+        //int time = 0;
+        //double xVelocity;
+        //double yVelocity;
     }
 }
