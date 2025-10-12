@@ -15,8 +15,12 @@ public class Ramp extends Actor
     public void act()
     {
         // Add your action code here.
-    }
-    public Ramp(){
         
+    }
+    public Ramp(int rampAngle){
+        setImage(new GreenfootImage(200, 10));
+        getImage().setColor(Color.BLACK);
+        getImage().fillRect(0,0,200,10);
+        setRotation(rampAngle);
     }
 }
