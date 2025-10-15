@@ -20,11 +20,24 @@ public class MyWorld extends World
         super(600, 400, 1); 
         Ramp ramp1 = new Ramp(0);
         addObject(ramp1,115,320);
+        
         Ramp ramp2 = new Ramp(rampAngle);
-        addObject(ramp2,215,320);
+        addObject(ramp2,215 - (int)xSide(),320 - (int)ySide());
         
     }
     public int getRampAngle(){
         return rampAngle;
+    }
+    public double xSide(){
+        double x;
+        
+        x = 50 * Math.cos(rampAngle);
+        return(x);
+    }
+    public double ySide(){
+        double y;
+        
+        y = 50 * Math.sin(rampAngle);
+        return(y);
     }
 }

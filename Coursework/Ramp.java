@@ -16,27 +16,30 @@ public class Ramp extends Actor
     public void act()
     {
         // Add your action code here.
-        
+        //setLocation(getX() - (int)xSide(), getY() + (int)ySide());
     }
     public Ramp(int rampAngle){
         setImage(new GreenfootImage(200, 10));
         getImage().setColor(Color.BLACK);
         getImage().fillRect(0,0,200,10);
         setRotation(rampAngle);
-        setLocation(getX() - (int)xSide(), getY() + (int)ySide());
+        
         
     }
     public double xSide(){
         double x;
-        MyWorld myWorld;
+        MyWorld myWorld = (MyWorld)getWorld();
         x = 50 * Math.cos(myWorld.getRampAngle());
         return(x);
     }
     public double ySide(){
         double y;
-        MyWorld myWorld;
-        y = 50 * Math.sin(myWorld.getRampAngle());
+        MyWorld myWorld = (MyWorld)getWorld();
+        y = 50 * Math.cos(myWorld.getRampAngle());
         return(y);
+    }
+    public double getXSide(){
+        return xSide();
     }
     
     
