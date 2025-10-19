@@ -9,6 +9,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     int rampAngle = 45;
+    //double rampAngle1;
+    double rampAngle2 = 55;
+    double angleRadians;
+    int xSide;
+    int ySide;
 
     /**
      * Constructor for objects of class MyWorld.
@@ -21,8 +26,10 @@ public class MyWorld extends World
         Ramp ramp1 = new Ramp(0);
         addObject(ramp1,115,320);
         
-        Ramp ramp2 = new Ramp(rampAngle);
-        addObject(ramp2,215 - (int)xSide(),320 - (int)ySide());
+        Ramp ramp2 = new Ramp((int)rampAngle2);
+        addObject(ramp2,215,320);
+        ramp2.setLocation(theXSides(),theYSides());
+        
         
     }
     public int getRampAngle(){
@@ -30,14 +37,28 @@ public class MyWorld extends World
     }
     public double xSide(){
         double x;
-        
-        x = 50 * Math.cos(rampAngle);
+        rampAngle = (int)Math.toRadians(rampAngle);
+        x = 100 * Math.cos(rampAngle);
         return(x);
     }
     public double ySide(){
         double y;
-        
-        y = 50 * Math.sin(rampAngle);
+        rampAngle = (int)Math.toRadians(rampAngle);
+        y = 100 * Math.sin(rampAngle);
         return(y);
     }
+    
+    public int theXSides(){
+        angleRadians = Math.toRadians(rampAngle2);
+        xSide = (int)(215 - 100 * Math.cos(angleRadians));
+        ySide = (int)(320 - 100 * Math.sin(angleRadians));
+        return(xSide);
+    }
+    public int theYSides(){
+        angleRadians = Math.toRadians(rampAngle2);
+        
+        ySide = (int)(320 - 100 * Math.sin(angleRadians));
+        return(ySide);
+    }
+    
 }
