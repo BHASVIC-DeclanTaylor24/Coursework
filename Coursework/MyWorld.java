@@ -10,7 +10,7 @@ public class MyWorld extends World
 {
     int rampAngle = 45;
     //double rampAngle1;
-    double rampAngle2 = 55;
+    double rampAngle2 = 45;
     double angleRadians;
     int xSide;
     int ySide;
@@ -51,7 +51,7 @@ public class MyWorld extends World
     public int theXSides(){
         angleRadians = Math.toRadians(rampAngle2);
         xSide = (int)(215 - 100 * Math.cos(angleRadians));
-        ySide = (int)(320 - 100 * Math.sin(angleRadians));
+        
         return(xSide);
     }
     public int theYSides(){

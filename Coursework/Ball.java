@@ -8,10 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Ball extends Actor
 {
-    double velocity =2;
-    int mass =11;
-    int rampAngle = 40;
-    float friction = 90;
+    double velocity =0;
+    int mass =5;
+    int rampAngle = 45;
+    float friction = 35;
     boolean startButton = true;
     int time = 0;
     double xVelocity;
@@ -55,7 +55,7 @@ public class Ball extends Actor
             setLocation(getX() + (int)xVelocity(),getY()); 
         }
         else{
-            setLocation(getX() + (int)xVelocity(),getY() + (int)yVelocity);
+            setLocation(getX() + (int)xVelocity(),getY() + (int)yVelocity());
         }
     }
     public void wall(){
