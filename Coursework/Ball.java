@@ -11,7 +11,7 @@ public class Ball extends Actor
     double velocity =0;
     int mass =5;
     int rampAngle = 45;
-    float friction = 35;
+    float friction = 10;
     boolean startButton = true;
     int time = 0;
     double xVelocity;

@@ -16,4 +16,9 @@ public class Wall extends Actor
     {
         // Add your action code here.
     }
+    public Wall(){
+        setImage(new GreenfootImage(40,100));
+        getImage().setColor(Color.BLACK);
+        getImage().fillRect(0,0,40,100);
+    }
 }
