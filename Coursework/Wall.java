@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Wall extends Actor
 {
+    private boolean contactingBall = false;
     /**
      * Act - do whatever the Wall wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -20,5 +21,13 @@ public class Wall extends Actor
         setImage(new GreenfootImage(40,100));
         getImage().setColor(Color.BLACK);
         getImage().fillRect(0,0,40,100);
+        getImage().setColor(Color.WHITE);
+        getImage().fillRect(3,3,34,94);
     }
+    public void ballCheck(){
+        if(isTouching(Ball.class)){
+            contactingBall =true;
+        }
+    }
+    
 }
