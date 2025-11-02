@@ -25,9 +25,17 @@ public class Wall extends Actor
         getImage().fillRect(3,3,34,94);
     }
     public void ballCheck(){
+         
         if(isTouching(Ball.class)){
-            contactingBall =true;
+            contactingBall = true;
         }
     }
+    public void setContactingBall(boolean contactingBall){
+        this.contactingBall = contactingBall;
+    }
+    public boolean getContactingBall(){
+        return contactingBall;
+    }
+    
     
 }

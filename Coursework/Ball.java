@@ -11,11 +11,12 @@ public class Ball extends Actor
     double velocity =0;
     int mass =5;
     int rampAngle = 45;
-    float friction = 10;
+    float friction = 5;
     boolean startButton = true;
     int time = 0;
     double xVelocity;
     double yVelocity;
+    
     /**
      * Act - do whatever the Ball wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -27,6 +28,7 @@ public class Ball extends Actor
             time++;
             velocity();
             position();
+            Wall wall = new Wall();
             if(isTouching(Wall.class)){
                 wall();
             }
@@ -77,4 +79,5 @@ public class Ball extends Actor
         //double xVelocity;
         //double yVelocity;
     }
+    
 }
