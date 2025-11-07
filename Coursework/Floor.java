@@ -16,4 +16,11 @@ public class Floor extends Actor
     {
         // Add your action code here.
     }
+    public Floor(){
+        setImage(new GreenfootImage(200,20));
+        getImage().setColor(Color.BLACK);
+        getImage().fillRect(0,0,200,20);
+        getImage().setColor(Color.WHITE);
+        getImage().fillRect(3,3,194,14);
+    }
 }
