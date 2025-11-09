@@ -27,8 +27,8 @@ public class StartButton extends Actor
         
     }
     public void startGame(){
-        if(Greenfoot.mouseClicked() == true){
-            startButton = true;
-        }
+        //if(Greenfoot.mouseClicked() == true){
+        //    startButton = true;
+        //}
     }
 }
