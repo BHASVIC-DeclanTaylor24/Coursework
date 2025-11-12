@@ -18,4 +18,6 @@ comment7.params=
 comment7.target=void\ wall()
 comment8.params=
 comment8.target=Ball()
-numComments=9
+comment9.params=startButton
+comment9.target=void\ setStartButton(boolean)
+numComments=10

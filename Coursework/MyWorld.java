@@ -14,6 +14,11 @@ public class MyWorld extends World
     double angleRadians;
     int xSide;
     int ySide;
+    
+    StartButton startButton1 = new StartButton();
+    private boolean startButton = false;
+    
+    Ball ball = new Ball();
 
     /**
      * Constructor for objects of class MyWorld.
@@ -29,6 +34,10 @@ public class MyWorld extends World
         Ramp ramp2 = new Ramp((int)rampAngle2);
         addObject(ramp2,215,320);
         ramp2.setLocation(theXSides(),theYSides());
+        
+        addObject(startButton1,512,58);
+        
+        addObject(ball,95,163);
         
         
     }
@@ -60,5 +69,13 @@ public class MyWorld extends World
         ySide = (int)(320 - 100 * Math.sin(angleRadians));
         return(ySide);
     }
+    public void act(){
+        if(Greenfoot.mouseClicked(startButton1)){
+            startButton = true;
+            
+            ball.setStartButton(true);
+        }
+    }
+    
     
 }

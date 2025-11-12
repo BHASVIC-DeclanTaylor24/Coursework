@@ -12,7 +12,7 @@ public class Ball extends Actor
     int mass =5;
     int rampAngle = 45;
     float friction = 5;
-    boolean startButton = true;
+    boolean startButton;
     int time = 0;
     double xVelocity;
     double yVelocity;
@@ -78,6 +78,9 @@ public class Ball extends Actor
         //int time = 0;
         //double xVelocity;
         //double yVelocity;
+    }
+    public void setStartButton(boolean startButton){
+        this.startButton = startButton;
     }
     
 }
