@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import javax.swing.JOptionPane;
 /**
  * Write a description of class MyWorld here.
  * 
@@ -19,6 +19,10 @@ public class MyWorld extends World
     private boolean startButton = false;
     
     Ball ball = new Ball();
+    
+    Data rampAngleData = new Data("Ramp Angle: ");
+    int rampAngle1;
+    String inputAngle;
 
     /**
      * Constructor for objects of class MyWorld.
@@ -36,9 +40,12 @@ public class MyWorld extends World
         ramp2.setLocation(theXSides(),theYSides());
         
         addObject(startButton1,512,58);
+        showText("Start",512,58);
         
         addObject(ball,95,163);
         
+        addObject(rampAngleData, 50,100);
+        showText(""+ rampAngle1,100,100);
         
     }
     public int getRampAngle(){
@@ -75,6 +82,12 @@ public class MyWorld extends World
             
             ball.setStartButton(true);
         }
+        
+        if(Greenfoot.mouseClicked(rampAngleData)){
+            inputAngle = JOptionPane.showInputDialog("Enter Ramp Angle: ");
+            rampAngle1 = Integer.parseInt(inputAngle);
+        }
+        showText(""+ rampAngle1,100,100);
     }
     
     
