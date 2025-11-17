@@ -8,9 +8,9 @@ import javax.swing.JOptionPane;
  */
 public class MyWorld extends World
 {
-    int rampAngle = 45;
+    //int rampAngle = 45;
     //double rampAngle1;
-    double rampAngle2 = 45;
+    //double rampAngle2 = 45;
     double angleRadians;
     int xSide;
     int ySide;
@@ -20,9 +20,18 @@ public class MyWorld extends World
     
     Ball ball = new Ball();
     
+    
     Data rampAngleData = new Data("Ramp Angle: ");
-    int rampAngle1;
+    int rampAngle =45;
     String inputAngle;
+    
+    Data massData = new Data("Mass: ");
+    int mass=0;
+    String inputMass;
+    
+    Data frictionData = new Data("Friction: ");
+    int friction=0;
+    String inputFriction;
 
     /**
      * Constructor for objects of class MyWorld.
@@ -35,7 +44,7 @@ public class MyWorld extends World
         Ramp ramp1 = new Ramp(0);
         addObject(ramp1,115,320);
         
-        Ramp ramp2 = new Ramp((int)rampAngle2);
+        Ramp ramp2 = new Ramp(rampAngle);
         addObject(ramp2,215,320);
         ramp2.setLocation(theXSides(),theYSides());
         
@@ -45,7 +54,13 @@ public class MyWorld extends World
         addObject(ball,95,163);
         
         addObject(rampAngleData, 50,100);
-        showText(""+ rampAngle1,100,100);
+        showText(""+ rampAngle,100,100);
+        
+        addObject(massData, 50,125);
+        showText(""+ mass,100,125);
+        
+        addObject(frictionData,50,150);
+        showText(""+ friction,100,150);
         
     }
     public int getRampAngle(){
@@ -65,13 +80,13 @@ public class MyWorld extends World
     }
     
     public int theXSides(){
-        angleRadians = Math.toRadians(rampAngle2);
+        angleRadians = Math.toRadians(rampAngle);
         xSide = (int)(215 - 100 * Math.cos(angleRadians));
         
         return(xSide);
     }
     public int theYSides(){
-        angleRadians = Math.toRadians(rampAngle2);
+        angleRadians = Math.toRadians(rampAngle);
         
         ySide = (int)(320 - 100 * Math.sin(angleRadians));
         return(ySide);
@@ -85,9 +100,24 @@ public class MyWorld extends World
         
         if(Greenfoot.mouseClicked(rampAngleData)){
             inputAngle = JOptionPane.showInputDialog("Enter Ramp Angle: ");
-            rampAngle1 = Integer.parseInt(inputAngle);
+            rampAngle = Integer.parseInt(inputAngle);
+            ball.setRampAngle(rampAngle);
         }
-        showText(""+ rampAngle1,100,100);
+        showText(""+ rampAngle,100,100);
+        
+        if(Greenfoot.mouseClicked(massData)){
+            inputMass = JOptionPane.showInputDialog("Enter Mass: ");
+            mass = Integer.parseInt(inputMass);
+            ball.setMass(mass);
+        }
+        showText(""+ mass,100,125);
+        
+        if(Greenfoot.mouseClicked(frictionData)){
+            inputFriction = JOptionPane.showInputDialog("Enter Friction: ");
+            friction = Integer.parseInt(inputFriction);
+            ball.setFriction(friction);
+        }
+        showText(""+ friction,100,150);
     }
     
     

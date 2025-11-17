@@ -13,6 +13,7 @@ public class Ramp extends Actor
     double angleRadians;
     int xSide;
     int ySide;
+    int rampAngle;
     /**
      * Act - do whatever the Ramp wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -23,11 +24,13 @@ public class Ramp extends Actor
         //setLocation(getX() - (int)xSide(), getY() + (int)ySide());
         //setLocation(theXSides(),theYSides());
         //System.out.println("Left end: (" + theXSides() + ", " + theYSides() + ")");
+        //setRotation(rampAngle);
     }
     public Ramp(int rampAngle){
         setImage(new GreenfootImage(200, 10));
         getImage().setColor(Color.BLACK);
         getImage().fillRect(0,0,length,10);
+        //this.rampAngle = rampAngle;
         setRotation(rampAngle);
         
         
@@ -60,6 +63,9 @@ public class Ramp extends Actor
         
         ySide = (int)(320 - 100 * Math.sin(angleRadians));
         return(ySide);
+    }
+    public void setRampAngle(int rampAngle){
+        this.rampAngle = rampAngle;
     }
     
     

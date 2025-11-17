@@ -82,5 +82,13 @@ public class Ball extends Actor
     public void setStartButton(boolean startButton){
         this.startButton = startButton;
     }
-    
+    public void setRampAngle(int rampAngle){
+        this.rampAngle = rampAngle;
+    }
+    public void setMass(int mass){
+        this.mass = mass;
+    }
+    public void setFriction(int friction){
+        this.friction = friction;
+    }
 }
