@@ -19,7 +19,7 @@ public class Data extends Actor
     }
     public Data(String dataType){
         this.dataType = dataType;
-        setImage(new GreenfootImage(dataType,10,Color.BLACK, Color.WHITE));
+        setImage(new GreenfootImage(dataType,15,Color.BLACK, Color.WHITE));
     }
 }
 

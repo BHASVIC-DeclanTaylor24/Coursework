@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Ramp extends Actor
 {
     int length = 200;
-    double rampAngle2 = 45;
+    //double rampAngle2 = 45;
     double angleRadians;
     int xSide;
     int ySide;
@@ -25,6 +25,7 @@ public class Ramp extends Actor
         //setLocation(theXSides(),theYSides());
         //System.out.println("Left end: (" + theXSides() + ", " + theYSides() + ")");
         //setRotation(rampAngle);
+        
     }
     public Ramp(int rampAngle){
         setImage(new GreenfootImage(200, 10));
@@ -53,19 +54,22 @@ public class Ramp extends Actor
     }
     
     public int theXSides(){
-        angleRadians = Math.toRadians(rampAngle2);
+        angleRadians = Math.toRadians(rampAngle);
         xSide = (int)(215 - 100 * Math.cos(angleRadians));
         
         return(xSide);
     }
     public int theYSides(){
-        angleRadians = Math.toRadians(rampAngle2);
+        angleRadians = Math.toRadians(rampAngle);
         
         ySide = (int)(320 - 100 * Math.sin(angleRadians));
         return(ySide);
     }
     public void setRampAngle(int rampAngle){
         this.rampAngle = rampAngle;
+    }
+    public void updateRamp(){
+        setRotation(rampAngle); 
     }
     
     

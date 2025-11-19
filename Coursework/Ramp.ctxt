@@ -18,4 +18,6 @@ comment7.params=
 comment7.target=int\ theYSides()
 comment8.params=rampAngle
 comment8.target=void\ setRampAngle(int)
-numComments=9
+comment9.params=
+comment9.target=void\ updateRamp()
+numComments=10

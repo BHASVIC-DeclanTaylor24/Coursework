@@ -24,6 +24,7 @@ public class MyWorld extends World
     Data rampAngleData = new Data("Ramp Angle: ");
     int rampAngle =45;
     String inputAngle;
+    Ramp ramp2 = new Ramp(rampAngle);
     
     Data massData = new Data("Mass: ");
     int mass=0;
@@ -44,7 +45,7 @@ public class MyWorld extends World
         Ramp ramp1 = new Ramp(0);
         addObject(ramp1,115,320);
         
-        Ramp ramp2 = new Ramp(rampAngle);
+        
         addObject(ramp2,215,320);
         ramp2.setLocation(theXSides(),theYSides());
         
@@ -53,15 +54,23 @@ public class MyWorld extends World
         
         addObject(ball,95,163);
         
-        addObject(rampAngleData, 50,100);
-        showText(""+ rampAngle,100,100);
+        addObject(rampAngleData, 105,55);
+        showText(""+ rampAngle,195,55);
         
-        addObject(massData, 50,125);
-        showText(""+ mass,100,125);
+        addObject(massData, 105,85);
+        showText(""+ mass,195,85);
         
-        addObject(frictionData,50,150);
-        showText(""+ friction,100,150);
+        addObject(frictionData,105,115);
+        showText(""+ friction,195,115);
         
+        DataTable dataTable = new DataTable();
+        addObject(dataTable,153,65);
+        showText("You Can Change",153,15);
+        
+        DataTable dataTable2 = new DataTable();
+        addObject(dataTable2,335,65);
+        
+        setPaintOrder(Data.class, DataTable.class);
     }
     public int getRampAngle(){
         return rampAngle;
@@ -102,6 +111,8 @@ public class MyWorld extends World
             inputAngle = JOptionPane.showInputDialog("Enter Ramp Angle: ");
             rampAngle = Integer.parseInt(inputAngle);
             ball.setRampAngle(rampAngle);
+            ramp2.setRotation(rampAngle);
+            ramp2.setLocation(theXSides(),theYSides());
         }
         showText(""+ rampAngle,100,100);
         
