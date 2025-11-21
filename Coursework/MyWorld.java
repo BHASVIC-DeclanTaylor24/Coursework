@@ -71,6 +71,15 @@ public class MyWorld extends World
         addObject(dataTable2,335,65);
         
         setPaintOrder(Data.class, DataTable.class);
+        
+        Floor floor1 = new Floor();
+        addObject(floor1,308,325);
+        
+        Floor floor2 = new Floor();
+        addObject(floor2,505,325);
+        
+        Wall wall = new Wall();
+        addObject(wall,491,268);
     }
     public int getRampAngle(){
         return rampAngle;
@@ -114,21 +123,21 @@ public class MyWorld extends World
             ramp2.setRotation(rampAngle);
             ramp2.setLocation(theXSides(),theYSides());
         }
-        showText(""+ rampAngle,100,100);
+        showText(""+ rampAngle,195,55);
         
         if(Greenfoot.mouseClicked(massData)){
             inputMass = JOptionPane.showInputDialog("Enter Mass: ");
             mass = Integer.parseInt(inputMass);
             ball.setMass(mass);
         }
-        showText(""+ mass,100,125);
+        showText(""+ mass,195,85);
         
         if(Greenfoot.mouseClicked(frictionData)){
             inputFriction = JOptionPane.showInputDialog("Enter Friction: ");
             friction = Integer.parseInt(inputFriction);
             ball.setFriction(friction);
         }
-        showText(""+ friction,100,150);
+        showText(""+ friction,195,115);
     }
     
     
