@@ -17,6 +17,7 @@ public class Ball extends Actor
     double xVelocity;
     double yVelocity;
     
+    
     /**
      * Act - do whatever the Ball wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -67,6 +68,9 @@ public class Ball extends Actor
         friction = 0;
         startButton = false;
         time = 0;
+        xVelocity = 0;
+        yVelocity = 0;
+        
     }
     public Ball(){
         getImage().scale(40,40);

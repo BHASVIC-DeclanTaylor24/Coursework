@@ -33,6 +33,13 @@ public class MyWorld extends World
     Data frictionData = new Data("Friction: ");
     int friction=0;
     String inputFriction;
+    
+    Data velocityData = new Data("Velocity ");
+    double velocity =0;
+    
+    Data xVelocityData = new Data("X-Velocity ");
+    
+    Data yVelocityData = new Data("Y-Velocity ");
 
     /**
      * Constructor for objects of class MyWorld.
@@ -52,7 +59,7 @@ public class MyWorld extends World
         addObject(startButton1,512,58);
         showText("Start",512,58);
         
-        addObject(ball,95,163);
+        addObject(ball,theBallXSides(),theBallYSides());
         
         addObject(rampAngleData, 105,55);
         showText(""+ rampAngle,195,55);
@@ -80,6 +87,21 @@ public class MyWorld extends World
         
         Wall wall = new Wall();
         addObject(wall,491,268);
+        
+        addObject(velocityData, 285,55);
+        showText(""+ (int)ball.velocity,375,55);
+        
+        addObject(xVelocityData, 285,85);
+        showText(""+ (int)ball.xVelocity,375,85);
+        
+        addObject(yVelocityData, 285,115);
+        showText(""+ (int)ball.yVelocity,375,115);
+        
+        showText("You Can't Change",335,15);
+        
+        Floor floor3 = new Floor();
+        addObject(floor3,110,325);
+        
     }
     public int getRampAngle(){
         return rampAngle;
@@ -122,6 +144,7 @@ public class MyWorld extends World
             ball.setRampAngle(rampAngle);
             ramp2.setRotation(rampAngle);
             ramp2.setLocation(theXSides(),theYSides());
+            ball.setLocation(theBallXSides(),theBallYSides());
         }
         showText(""+ rampAngle,195,55);
         
@@ -138,7 +161,31 @@ public class MyWorld extends World
             ball.setFriction(friction);
         }
         showText(""+ friction,195,115);
+        
+        showText(""+ (int)ball.velocity,375,55);
+        showText(""+ (int)ball.xVelocity,375,85);
+        showText(""+ (int)ball.yVelocity,375,115);
+        
+        resetPos();
     }
+    public int theBallXSides(){
+        angleRadians = Math.toRadians(rampAngle);
+        xSide = (int)(ramp2.getX() - 100 * Math.cos(angleRadians));
+        
+        return(xSide);
+    }
+    public int theBallYSides(){
+        angleRadians = Math.toRadians(rampAngle);
+        
+        ySide = (int)(ramp2.getY() - 100 * Math.sin(angleRadians));
+        return(ySide);
+    }
+    public void resetPos(){
+        if(ball.startButton == false){
+            ball.setLocation(theBallXSides(),theBallYSides());
+        }
+    }
+    
     
     
 }
