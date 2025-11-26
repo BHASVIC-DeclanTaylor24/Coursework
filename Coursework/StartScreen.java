@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class StartScreen extends World
 {
+    Text start = new Text(4);
 
     /**
      * Constructor for objects of class StartScreen.
@@ -28,7 +29,16 @@ public class StartScreen extends World
         Text explain = new Text(3);
         addObject(explain,300,300);
         
+        addObject(start,300,150);
+        
+        
     }
+    public void act(){
+        if(Greenfoot.mouseClicked(start)){
+            Greenfoot.setWorld(new MyWorld());
+        }
+    }
+    
     
     
 }

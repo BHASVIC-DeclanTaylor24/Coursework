@@ -26,6 +26,9 @@ public class Text extends Actor
         if (text == 3){
             explain();
         }
+        if (text == 4){
+            start();
+        }
     }
     public void header(){
         setImage(new GreenfootImage("RAMPLE WORLD",50,Color.BLACK, Color.WHITE));
@@ -35,11 +38,27 @@ public class Text extends Actor
     }
     public void explain(){
         setImage(new GreenfootImage(400,70));
-        getImage().drawString("This is a simulator that is made to help people understand how the ramp and ball interact with each other and can help A level Students with there Maths and Physics",30,30);
-        getImage().drawString("ramp and ball interact with each other and can help A level Students",30,50);
-        getImage().drawString("with there Maths and Physics",130,70);
         getImage().setColor(Color.BLACK);
+        getImage().fillRect(0,0,400,70);
+        getImage().setColor(Color.WHITE);
+        getImage().fillRect(3,3,394,64);
+        getImage().setColor(Color.BLACK);
+        getImage().drawString("This is a simulator that is made to help people understand how the ",10,20);
+        getImage().drawString("ramp and ball interact with each other and can help A level Students",10,40);
+        getImage().drawString("with there Maths and Physics",120,60);
         
+        
+        
+        
+    }
+    public void start(){
+        setImage(new GreenfootImage(150,80));
+        getImage().setColor(Color.BLACK);
+        getImage().fillRect(0,0,150,80);
+        getImage().setColor(Color.WHITE);
+        getImage().fillRect(3,3,144,74);
+        getImage().setColor(Color.BLACK);
+        getImage().drawString("START SIMULATOR",20,43);
         
     }
 }
