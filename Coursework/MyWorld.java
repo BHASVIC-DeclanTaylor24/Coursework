@@ -137,7 +137,7 @@ public class MyWorld extends World
             
             ball.setStartButton(true);
         }
-        
+        ball.wall();
         if(Greenfoot.mouseClicked(rampAngleData)){
             inputAngle = JOptionPane.showInputDialog("Enter Ramp Angle: ");
             rampAngle = Integer.parseInt(inputAngle);
@@ -167,6 +167,8 @@ public class MyWorld extends World
         showText(""+ (int)ball.yVelocity,375,115);
         
         resetPos();
+        
+        
     }
     public int theBallXSides(){
         angleRadians = Math.toRadians(rampAngle);

@@ -30,9 +30,8 @@ public class Ball extends Actor
             velocity();
             position();
             Wall wall = new Wall();
-            if(isTouching(Wall.class)){
-                wall();
-            }
+            wall();
+            
         }
     }
     public double acceleration(){
@@ -62,14 +61,17 @@ public class Ball extends Actor
         }
     }
     public void wall(){
-        velocity = 0;
-        mass = 0;
-        rampAngle = 45;
-        friction = 0;
-        startButton = false;
-        time = 0;
-        xVelocity = 0;
-        yVelocity = 0;
+        if(isTouching(Wall.class)){
+            velocity = 0;
+            mass = 0;
+            rampAngle = 45;
+            friction = 0;
+            startButton = false;
+            time = 0;
+            xVelocity = 0;
+            yVelocity = 0; 
+        }
+        
         
     }
     public Ball(){
@@ -95,4 +97,5 @@ public class Ball extends Actor
     public void setFriction(int friction){
         this.friction = friction;
     }
+    
 }
