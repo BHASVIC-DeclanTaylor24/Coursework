@@ -28,26 +28,25 @@ public class Ramp extends Actor
         
     }
     public Ramp(int rampAngle){
-        setImage(new GreenfootImage(200, 10));
-        getImage().setColor(Color.BLACK);
-        getImage().fillRect(0,0,length,10);
-        //this.rampAngle = rampAngle;
-        setRotation(rampAngle);
+        setImage(new GreenfootImage(200, 10)); //  creates the image
+        getImage().setColor(Color.BLACK); // sets image to black
+        getImage().fillRect(0,0,200,10); // colours in the whole image
+        setRotation(rampAngle); // sets the rotation of the ramp to what ever is inputted
         
-        
+        //= (MyWorld)getWorld();
     
     }
     public double xSide(){
         double x;
-        MyWorld myWorld = (MyWorld)getWorld();
-        x = 50 * Math.cos(myWorld.getRampAngle());
-        return(x);
+        MyWorld myWorld = (MyWorld)getWorld(); // allows me to use methods and variables from MyWorld class
+        x = 50 * Math.cos(myWorld.getRampAngle()); // works out change i need to move for x
+        return(x); // returns value
     }
     public double ySide(){
         double y;
-        MyWorld myWorld = (MyWorld)getWorld();
-        y = 50 * Math.cos(myWorld.getRampAngle());
-        return(y);
+        MyWorld myWorld = (MyWorld)getWorld(); // allows me to use methods and variables from MyWorld class
+        y = 50 * Math.cos(myWorld.getRampAngle()); // works out change i need to move for y
+        return(y); // returns value
     }
     public double getXSide(){
         return xSide();
